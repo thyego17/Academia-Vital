@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Academia Vital | Transformando esforço em resultados</title>
+<meta name="description" content="Academia Vital: ambiente moderno e acolhedor, equipamentos modernos e profissionais qualificados. Conheça os planos e horários.">
+<meta name="theme-color" content="#0d1116">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏋️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1116;--panel:#141a21;--ink:#e8edf0;--muted:#93a1ab;--line:rgba(232,237,240,.15);--accent:#7fb2c9;
+--serif:"Cormorant Garamond",Georgia,serif;--sans:"Jost","Segoe UI",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--ink);font:400 1.05rem/1.7 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+.label{font:500 .75rem var(--sans);letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+em{font-style:italic;color:var(--accent)}
+section{padding:5rem 0}
+h2{font:500 clamp(2.2rem,5vw,3.4rem)/1.05 var(--serif);margin:.6rem 0 1.8rem}
+
+header{position:sticky;top:0;z-index:10;background:rgba(13,17,22,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:66px}
+.logo{font:italic 500 1.5rem var(--serif);text-decoration:none}
+nav ul{display:flex;gap:1.6rem;list-style:none}
+nav a{font:500 .72rem var(--sans);letter-spacing:.18em;text-transform:uppercase;text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--ink)}
+
+.hero{padding:6.5rem 0 5.5rem}
+.hero h1{font:500 clamp(4rem,16vw,10rem)/.9 var(--serif);letter-spacing:-.03em;margin:1.2rem 0 1.6rem}
+.hero p{font:italic 400 clamp(1.4rem,3.4vw,2rem)/1.3 var(--serif);color:var(--muted);margin-bottom:2.2rem;max-width:24ch}
+.status{display:inline-flex;align-items:center;gap:.6rem;padding:.4rem 1rem;border:1px solid var(--line);border-radius:99px;font-size:.85rem;color:var(--muted);margin-bottom:1.5rem}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.status.open .dot{background:#7fbf7f}
+.btn{display:inline-block;padding:.9rem 2rem;border:1px solid var(--accent);background:none;cursor:pointer;text-decoration:none;font:500 .76rem var(--sans);letter-spacing:.2em;text-transform:uppercase;transition:background .25s,color .25s}
+.btn:hover,.btn.fill{background:var(--accent);color:#0a1418}
+.btn.fill:hover{background:transparent;color:var(--ink)}
+.in{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+.in:nth-child(2){animation-delay:.1s}.in:nth-child(3){animation-delay:.2s}.in:nth-child(4){animation-delay:.3s}
+@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+.two{display:grid;grid-template-columns:1fr 1.2fr;gap:4rem}
+.alt{background:var(--panel);border-block:1px solid var(--line)}
+.alt p,.two p{color:var(--muted)}.two p+p{margin-top:1rem}
+
+.perks{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);list-style:none}
+.perks li{background:var(--bg);padding:1.6rem 1.4rem;min-height:140px;transition:background .3s}
+.perks li:hover{background:var(--panel)}
+.perks i{font:italic 400 1.2rem var(--serif);color:var(--accent);display:block;margin-bottom:.6rem}
+.perks h3{font:500 1.55rem/1.2 var(--serif)}
+
+.toggle{display:inline-flex;border:1px solid var(--line);margin-bottom:2rem}
+.toggle button{background:none;border:0;padding:.55rem 1.4rem;font:500 .72rem var(--sans);letter-spacing:.16em;text-transform:uppercase;cursor:pointer;color:var(--muted)}
+.toggle button[aria-pressed=true]{background:var(--accent);color:#0a1418}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.plan{border:1px solid var(--line);padding:2rem 1.6rem;background:var(--bg);display:flex;flex-direction:column;transition:border-color .3s,transform .3s}
+.plan:hover{border-color:var(--accent);transform:translateY(-4px)}
+.plan.hi{border-color:var(--accent)}
+.plan h3{font:500 2rem var(--serif)}
+.plan .desc{color:var(--muted);flex:1;margin:.3rem 0 1.4rem}
+.plan .val{font:500 2.6rem/1 var(--serif);color:var(--accent)}
+.plan .per{font-size:.85rem;color:var(--muted);margin:.3rem 0 1.4rem;min-height:1.5rem}
+.nota{margin-top:1.2rem;font-size:.85rem;color:var(--muted)}
+
+table{width:100%;border-collapse:collapse;max-width:520px}
+td{padding:.8rem 0;border-bottom:1px solid var(--line)}
+td:last-child{text-align:right;color:var(--muted)}
+tr.today td{color:var(--accent);font-weight:500}
+.social{display:flex;gap:1rem;flex-wrap:wrap;margin:1.6rem 0 1rem}
+address{font-style:normal;color:var(--muted)}
+address strong{display:block;font:500 1.6rem var(--serif);color:var(--ink)}
+footer{padding:2rem 0;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem}
+footer .lema{font:italic 400 1.2rem var(--serif);color:var(--ink)}
+
+@media (max-width:860px){
+  section{padding:3.5rem 0}.hero{padding:4rem 0}
+  .two{grid-template-columns:1fr;gap:1.5rem}
+  .perks{grid-template-columns:1fr 1fr}
+  .plans{grid-template-columns:1fr}
+  nav{display:none}
+}
+@media (max-width:480px){.perks{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#inicio">Academia Vital</a>
+    <nav aria-label="Principal"><ul>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#beneficios">Benefícios</a></li>
+      <li><a href="#planos">Planos</a></li>
+      <li><a href="#horario">Horário</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="in"><span class="status" id="status"><span class="dot"></span><span id="status-txt">Verificando horário…</span></span></div>
+    <h1 class="in">Vital<em>.</em></h1>
+    <div class="in">
+      <p>Transformando esforço em resultados.</p>
+      <a class="btn fill" href="#planos">Ver planos</a>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="sobre">
+  <div class="wrap two">
+    <div>
+      <span class="label">Sobre nós</span>
+      <h2>Saúde, bem-estar e <em>qualidade</em> de vida.</h2>
+    </div>
+    <div>
+      <p>Fundada com o objetivo de promover saúde, bem-estar e qualidade de vida, a Academia Vital oferece um ambiente moderno e acolhedor para pessoas de todas as idades.</p>
+      <p>Nossa missão é ajudar cada aluno a alcançar seus objetivos, seja ganhar massa muscular, melhorar o condicionamento físico ou adotar hábitos mais saudáveis.</p>
+      <p>Contamos com equipamentos modernos, profissionais qualificados e uma estrutura preparada para proporcionar a melhor experiência possível.</p>
+    </div>
+  </div>
+</section>
+
+<section id="beneficios">
+  <div class="wrap">
+    <span class="label">Benefícios</span>
+    <h2>O que você encontra aqui</h2>
+    <ul class="perks">
+      <li><i>01</i><h3>Equipamentos modernos e seguros</h3></li>
+      <li><i>02</i><h3>Profissionais qualificados</h3></li>
+      <li><i>03</i><h3>Ambiente climatizado</h3></li>
+      <li><i>04</i><h3>Aulas em grupo</h3></li>
+      <li><i>05</i><h3>Treinos personalizados</h3></li>
+      <li><i>06</i><h3>Espaço amplo e organizado</h3></li>
+    </ul>
+  </div>
+</section>
+
+<section class="alt" id="planos">
+  <div class="wrap">
+    <span class="label">Planos</span>
+    <h2>Escolha o seu plano</h2>
+    <div class="toggle" role="group" aria-label="Periodicidade">
+      <button id="m" aria-pressed="true">Mensal</button>
+      <button id="a" aria-pressed="false">Anual</button>
+    </div>
+    <div class="plans" id="plans"></div>
+    <p class="nota" id="nota">Valores mensais.</p>
+  </div>
+</section>
+
+<section id="horario">
+  <div class="wrap two">
+    <div>
+      <span class="label">Horário</span>
+      <h2>Horário de funcionamento</h2>
+    </div>
+    <div><table id="horarios"></table></div>
+  </div>
+</section>
+
+<section class="alt" id="contato">
+  <div class="wrap two">
+    <div>
+      <span class="label">Contato</span>
+      <h2>Venha treinar</h2>
+    </div>
+    <div>
+      <address><strong>Avenida dos Campeões, 450</strong>Centro</address>
+      <div class="social">
+        <a class="btn" href="tel:+5511988888888">Telefone</a>
+        <a class="btn" href="mailto:contato@academiavital.com">E-mail</a>
+        <a class="btn" href="https://www.google.com/maps/search/?api=1&query=Avenida+dos+Campe%C3%B5es+450+Centro">Mapa</a>
+      </div>
+      <address>(11) 98888-8888<br>contato@academiavital.com</address>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="lema">Transformando esforço em resultados.</span>
+    <span>© 2026 Academia Vital · Desenvolvido por <a href="https://thyego17.github.io/Portif-lio/">Thyego</a></span>
+  </div>
+</footer>
+
+<script>
+const PLANS=[
+  ["Básico","Musculação livre",79.90,false],
+  ["Plus","Musculação + cardio",109.90,true],
+  ["Premium","Acesso total + aulas especiais",149.90,false]
+];
+const brl=n=>n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const box=document.getElementById("plans"),nota=document.getElementById("nota"),bm=document.getElementById("m"),ba=document.getElementById("a");
+function plans(anual){
+  bm.setAttribute("aria-pressed",!anual);ba.setAttribute("aria-pressed",anual);
+  box.innerHTML=PLANS.map(p=>`<article class="plan${p[3]?" hi":""}"><h3>${p[0]}</h3><p class="desc">${p[1]}</p><div class="val">${brl(anual?p[2]*10:p[2])}</div><div class="per">${anual?"por ano ("+brl(p[2]*10/12)+" por mês)":"por mês"}</div><a class="btn${p[3]?" fill":""}" href="#contato">Quero este</a></article>`).join("");
+  nota.textContent=anual?"No plano anual você paga 10 meses e usa 12. Condição de exemplo para demonstração.":"Valores mensais.";
+}
+bm.addEventListener("click",()=>plans(false));ba.addEventListener("click",()=>plans(true));
+plans(false);
+
+const HOURS=[["Domingo",8,12],["Segunda",6,22],["Terça",6,22],["Quarta",6,22],["Quinta",6,22],["Sexta",6,22],["Sábado",8,18]];
+const f=h=>String(h).padStart(2,"0")+"h";
+const now=new Date(),d=now.getDay(),h=now.getHours()+now.getMinutes()/60;
+document.getElementById("horarios").innerHTML=HOURS.map((r,i)=>`<tr class="${i===d?"today":""}"><td>${r[0]}</td><td>${f(r[1])} às ${f(r[2])}</td></tr>`).join("")+`<tr><td>Feriados</td><td>08h às 14h</td></tr>`;
+const t=HOURS[d],open=h>=t[1]&&h<t[2];
+document.getElementById("status").classList.toggle("open",open);
+document.getElementById("status-txt").textContent=open?"Aberto agora":"Fechado agora";
+</script>
+</body>
+</html>
